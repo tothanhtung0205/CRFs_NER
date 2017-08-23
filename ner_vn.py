@@ -7,6 +7,7 @@ import scipy.stats
 from pyvi.pyvi import ViPosTagger,ViTokenizer
 from sklearn.externals import joblib
 from sklearn.model_selection import RandomizedSearchCV
+from collections import Counter
 
 #Featurelize sentences
 def contains_digit(str):
@@ -28,7 +29,23 @@ def is_full_name(word):
             return False
     return True
 
-def get_
+def get_shape(word):
+    shape = ""
+    if word.isdigit():      # 123,33,52123
+        shape = "so"
+    elif contains_digit(word):      #a12,15B,2231XXX
+        shape = "ma"
+    elif word.isupper():            #UBND,CLGT,...
+        shape = "viet hoa"
+    elif is_full_name(word):        #To_Thanh_Tung
+        shape = "ten day du"
+    elif word.istitle():            #Nam,An,Huy.....
+        shape = 'title'
+    elif word.islower():            #abc,xyz
+        shape = 'viet thuong'
+    else:
+        shape = 'other'             #mEo,iPhone
+    return shape
 
 def single_features(sent, i):
     raw_word_0 = sent[i][0]
@@ -47,16 +64,7 @@ def single_features(sent, i):
     word_add_2 = sent[i + 2][0].lower() if i < len(sent)-2  else "EOS"
     postag_add_2 = sent[i + 2][1] if i < len(sent)-2 else "EOS"
 
-    O_0 = {
-        'W(0).isupper()': raw_word_0.isupper(),  # O_0
-        'W(0).istitle()': raw_word_0.istitle(),  # 0_0
-        'W(0).isdigit()': raw_word_0.isdigit(),  # 0_0
-        'W(0).contains_digit()': contains_digit(raw_word_0),  # O_0
-        'W(0).is_full_name()':is_full_name(raw_word_0)
-        }
-
-    W0_O0 = O_0
-    W0_O0.update({'W(0)': word_0})
+    O_0 = get_shape(raw_word_0)
 
     features = {
         'bias': 1.0,
@@ -96,7 +104,7 @@ def single_features(sent, i):
         'W(0)+P(1)':word_0+'+'+postag_add_1,
         'W(0)+P(-1)': word_0 + '+' + postag_minus_1,
 
-        'W(0)+O(0)':W0_O0,
+        'W(0)+O(0)':word_0+'+'+O_0,
     }
 
 
@@ -189,6 +197,7 @@ def optimize(model):
     print('best params:', rs.best_params_)
     print('best CV score:', rs.best_score_)
 
+
 def estimate(model):
     crf = joblib.load(model)
     test_sents = read_file('dataset/test_nor.txt')
@@ -213,7 +222,6 @@ def estimate(model):
         y_test, y_pred, labels=sorted_labels, digits=3
     ))
 
-
 #test a sentences
 def test_ner(crf, test_sent):
     arr_featurized_sent = []
@@ -235,7 +243,8 @@ def predict(crf, query):
 
     query = unicode(query, encoding='utf-8')
     kqcc = test_ner(crf, query)
-    #s = [x[0][0] + u' -- ' + unicode(x[1], 'utf-8') for x in kqcc]
+    # s = [x[0][0] + u' -- ' + unicode(x[1], 'utf-8') for x in kqcc]
+    # return u''.join(s)
     s = ""
     for i in xrange(len(kqcc)):
         try:
@@ -270,8 +279,8 @@ def predict(crf, query):
     return s
 
 
-fit('crf_09.pkl')
+fit('crf_092.pkl')
 #optimize('crf05.pkl')
-estimate('crf_09.pkl')
+estimate('crf_092.pkl')
 
 
