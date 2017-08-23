@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c5dac04-68e4-4c08-bdd6-233c9c7629f5" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/crf.pkl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/crf01.pkl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/crf02.pkl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/crf03.pkl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/crf05.pkl" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataset/ner_vietnamese.txt" afterPath="$PROJECT_DIR$/dataset/ner_vietnamese.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crf.html" afterPath="$PROJECT_DIR$/crf.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ner_vn.py" afterPath="$PROJECT_DIR$/ner_vn.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.py" afterPath="$PROJECT_DIR$/server.py" />
     </list>
@@ -24,11 +27,51 @@
       <file leaf-file-name="ner_vn.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ner_vn.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="467">
-              <caret line="233" column="0" lean-forward="true" selection-start-line="233" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
+            <state relative-caret-position="181">
+              <caret line="30" column="8" lean-forward="false" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
               <folding>
-                <element signature="e#15#34#0" expanded="true" />
+                <element signature="e#23#42#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="train_nor.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dataset/train_nor.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3244184">
+              <caret line="39738" column="4" lean-forward="false" selection-start-line="39738" selection-start-column="0" selection-end-line="39738" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="regex.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/regex.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="13" column="11" lean-forward="false" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tinh_thanh.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dataset/tinh_thanh.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nomalize_dataset.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dataset/nomalize_dataset.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -36,11 +79,21 @@
       <file leaf-file-name="server.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="23" lean-forward="true" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+            <state relative-caret-position="135">
+              <caret line="9" column="19" lean-forward="true" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
               <folding>
                 <element signature="e#23#55#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="crf.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/crf.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="29" column="57" lean-forward="false" selection-start-line="29" selection-start-column="57" selection-end-line="29" selection-end-column="57" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -71,6 +124,7 @@
       <find>B-MISC</find>
       <find>B-MICs</find>
       <find>B-MICS</find>
+      <find>ngày</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -86,8 +140,11 @@
         <option value="$PROJECT_DIR$/dataset/tach_file.py" />
         <option value="$PROJECT_DIR$/dataset/test.txt" />
         <option value="$PROJECT_DIR$/dataset/train.txt" />
-        <option value="$PROJECT_DIR$/ner_vn.py" />
+        <option value="$PROJECT_DIR$/crf.html" />
         <option value="$PROJECT_DIR$/server.py" />
+        <option value="$PROJECT_DIR$/dataset/tinh_thanh.txt" />
+        <option value="$PROJECT_DIR$/regex.py" />
+        <option value="$PROJECT_DIR$/ner_vn.py" />
       </list>
     </option>
   </component>
@@ -96,6 +153,9 @@
     <option name="y" value="24" />
     <option name="width" value="1315" />
     <option name="height" value="744" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -112,6 +172,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -124,10 +185,23 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CRFs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CRFs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dataset" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -138,7 +212,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.server">
+  <component name="RunManager" selected="Python.ner_vn">
     <configuration default="false" name="ner_vn" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -173,23 +247,6 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="cout" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="CRFs" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cout.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
     <configuration default="false" name="nomalize_dataset" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -220,6 +277,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="CRFs" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dataset/tach_file.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="regex" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="CRFs" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/regex.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -361,17 +435,17 @@
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.ner_vn" />
       <item index="1" class="java.lang.String" itemvalue="Python.server" />
-      <item index="2" class="java.lang.String" itemvalue="Python.cout" />
-      <item index="3" class="java.lang.String" itemvalue="Python.nomalize_dataset" />
-      <item index="4" class="java.lang.String" itemvalue="Python.tach_file" />
+      <item index="2" class="java.lang.String" itemvalue="Python.nomalize_dataset" />
+      <item index="3" class="java.lang.String" itemvalue="Python.tach_file" />
+      <item index="4" class="java.lang.String" itemvalue="Python.regex" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.server" />
-        <item index="1" class="java.lang.String" itemvalue="Python.ner_vn" />
-        <item index="2" class="java.lang.String" itemvalue="Python.tach_file" />
-        <item index="3" class="java.lang.String" itemvalue="Python.nomalize_dataset" />
-        <item index="4" class="java.lang.String" itemvalue="Python.cout" />
+        <item index="0" class="java.lang.String" itemvalue="Python.ner_vn" />
+        <item index="1" class="java.lang.String" itemvalue="Python.server" />
+        <item index="2" class="java.lang.String" itemvalue="Python.regex" />
+        <item index="3" class="java.lang.String" itemvalue="Python.tach_file" />
+        <item index="4" class="java.lang.String" itemvalue="Python.nomalize_dataset" />
       </list>
     </recent_temporary>
   </component>
@@ -406,17 +480,17 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6666667" sideWeight="0.503096" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48452014" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.252322" sideWeight="0.49690402" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.3359133" sideWeight="0.49690402" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32817337" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47213623" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.52012384" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -454,17 +528,89 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="48" />
+      <option name="time" value="52" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/dataset/train_nor.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="596070">
+          <caret line="39738" column="4" lean-forward="false" selection-start-line="39738" selection-start-column="0" selection-end-line="39738" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/regex.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataset/tinh_thanh.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ner_vn.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#15#34#0" expanded="true" />
+            <element signature="e#23#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding>
+            <element signature="e#23#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crf.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="57" lean-forward="false" selection-start-line="29" selection-start-column="57" selection-end-line="29" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ner_vn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#23#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="25" column="23" lean-forward="true" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+          <folding>
+            <element signature="e#23#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ner_vn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#23#42#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -473,7 +619,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="291045">
           <caret line="19403" column="14" lean-forward="false" selection-start-line="19403" selection-start-column="8" selection-end-line="19403" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -481,7 +626,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289305">
           <caret line="19287" column="15" lean-forward="false" selection-start-line="19287" selection-start-column="9" selection-end-line="19287" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -489,7 +633,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1920450">
           <caret line="128030" column="0" lean-forward="false" selection-start-line="128030" selection-start-column="0" selection-end-line="128030" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -508,7 +651,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#15#34#0" expanded="true" />
+            <element signature="e#23#42#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -517,7 +660,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="291045">
           <caret line="19403" column="14" lean-forward="false" selection-start-line="19403" selection-start-column="8" selection-end-line="19403" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -525,7 +667,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289305">
           <caret line="19287" column="15" lean-forward="false" selection-start-line="19287" selection-start-column="9" selection-end-line="19287" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -533,7 +674,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1920450">
           <caret line="128030" column="0" lean-forward="false" selection-start-line="128030" selection-start-column="0" selection-end-line="128030" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -552,7 +692,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#15#34#0" expanded="true" />
+            <element signature="e#23#42#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -561,7 +701,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="291045">
           <caret line="19403" column="14" lean-forward="false" selection-start-line="19403" selection-start-column="8" selection-end-line="19403" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -569,7 +708,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289305">
           <caret line="19287" column="15" lean-forward="false" selection-start-line="19287" selection-start-column="9" selection-end-line="19287" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -577,7 +715,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1920450">
           <caret line="128030" column="0" lean-forward="false" selection-start-line="128030" selection-start-column="0" selection-end-line="128030" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -596,7 +733,7 @@
         <state relative-caret-position="2775">
           <caret line="189" column="37" lean-forward="false" selection-start-line="189" selection-start-column="37" selection-end-line="189" selection-end-column="37" />
           <folding>
-            <element signature="e#15#34#0" expanded="true" />
+            <element signature="e#23#42#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -605,7 +742,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="291045">
           <caret line="19403" column="14" lean-forward="false" selection-start-line="19403" selection-start-column="8" selection-end-line="19403" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -613,7 +749,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289305">
           <caret line="19287" column="15" lean-forward="false" selection-start-line="19287" selection-start-column="9" selection-end-line="19287" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -621,7 +756,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1920450">
           <caret line="128030" column="0" lean-forward="false" selection-start-line="128030" selection-start-column="0" selection-end-line="128030" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -640,7 +774,7 @@
         <state relative-caret-position="2775">
           <caret line="189" column="37" lean-forward="false" selection-start-line="189" selection-start-column="37" selection-end-line="189" selection-end-column="37" />
           <folding>
-            <element signature="e#15#34#0" expanded="true" />
+            <element signature="e#23#42#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -649,7 +783,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="291045">
           <caret line="19403" column="14" lean-forward="false" selection-start-line="19403" selection-start-column="8" selection-end-line="19403" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -657,7 +790,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289305">
           <caret line="19287" column="15" lean-forward="false" selection-start-line="19287" selection-start-column="9" selection-end-line="19287" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -665,7 +797,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1920450">
           <caret line="128030" column="0" lean-forward="false" selection-start-line="128030" selection-start-column="0" selection-end-line="128030" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -684,7 +815,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#15#34#0" expanded="true" />
+            <element signature="e#23#42#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -693,7 +824,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="291045">
           <caret line="19403" column="14" lean-forward="false" selection-start-line="19403" selection-start-column="8" selection-end-line="19403" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -701,7 +831,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289305">
           <caret line="19287" column="15" lean-forward="false" selection-start-line="19287" selection-start-column="9" selection-end-line="19287" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -709,7 +838,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1920450">
           <caret line="128030" column="0" lean-forward="false" selection-start-line="128030" selection-start-column="0" selection-end-line="128030" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -734,7 +862,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="291045">
           <caret line="19403" column="14" lean-forward="false" selection-start-line="19403" selection-start-column="8" selection-end-line="19403" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -742,7 +869,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1920450">
           <caret line="128030" column="0" lean-forward="false" selection-start-line="128030" selection-start-column="0" selection-end-line="128030" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -753,30 +879,76 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dataset/train_nor.txt">
+    <entry file="file://$USER_HOME$/.local/lib/python2.7/site-packages/pyvi/pyvi.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
-          <caret line="19287" column="15" lean-forward="false" selection-start-line="19287" selection-start-column="9" selection-end-line="19287" selection-end-column="15" />
+          <caret line="11" column="6" lean-forward="false" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataset/tinh_thanh.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataset/ner_vietnamese.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataset/nomalize_dataset.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="23" lean-forward="true" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+        <state relative-caret-position="135">
+          <caret line="9" column="19" lean-forward="true" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
           <folding>
             <element signature="e#23#55#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/crf.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="57" lean-forward="false" selection-start-line="29" selection-start-column="57" selection-end-line="29" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataset/train_nor.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3244184">
+          <caret line="39738" column="4" lean-forward="false" selection-start-line="39738" selection-start-column="0" selection-end-line="39738" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/regex.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="11" lean-forward="false" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ner_vn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="233" column="0" lean-forward="true" selection-start-line="233" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
+        <state relative-caret-position="181">
+          <caret line="30" column="8" lean-forward="false" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
           <folding>
-            <element signature="e#15#34#0" expanded="true" />
+            <element signature="e#23#42#0" expanded="true" />
           </folding>
         </state>
       </provider>

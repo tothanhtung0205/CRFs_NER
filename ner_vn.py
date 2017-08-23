@@ -1,4 +1,4 @@
-# coding=utf-8
+# -*- coding=utf-8 -*-
 from io import open
 import sklearn_crfsuite
 from sklearn_crfsuite import metrics
@@ -28,7 +28,10 @@ def is_full_name(word):
             return False
     return True
 
+def get_
+
 def single_features(sent, i):
+    raw_word_0 = sent[i][0]
     word_0 = sent[i][0].lower()
     postag_0 = sent[i][1]
 
@@ -41,19 +44,19 @@ def single_features(sent, i):
     word_add_1 = sent[i+1][0].lower() if i<len(sent)-1 else "EOS"
     postag_add_1 = sent[i+1][1] if i < len(sent)-1 else "EOS"
 
-    word_add_2 = sent[i + 2][0] if i < len(sent)-2  else "EOS"
+    word_add_2 = sent[i + 2][0].lower() if i < len(sent)-2  else "EOS"
     postag_add_2 = sent[i + 2][1] if i < len(sent)-2 else "EOS"
 
     O_0 = {
-        'W(0).isupper()': word_0.isupper(),  # O_0
-        'W(0).istitle()': word_0.istitle(),  # 0_0
-        'W(0).isdigit()': word_0.isdigit(),  # 0_0
-        'W(0).contains_digit()': contains_digit(word_0),  # O_0
-        'W(0).is_full_name()':is_full_name(word_0)
+        'W(0).isupper()': raw_word_0.isupper(),  # O_0
+        'W(0).istitle()': raw_word_0.istitle(),  # 0_0
+        'W(0).isdigit()': raw_word_0.isdigit(),  # 0_0
+        'W(0).contains_digit()': contains_digit(raw_word_0),  # O_0
+        'W(0).is_full_name()':is_full_name(raw_word_0)
         }
 
-    #W0_O0 = O_0
-    #W0_O0.update({'W(0)': word_0})
+    W0_O0 = O_0
+    W0_O0.update({'W(0)': word_0})
 
     features = {
         'bias': 1.0,
@@ -93,7 +96,7 @@ def single_features(sent, i):
         'W(0)+P(1)':word_0+'+'+postag_add_1,
         'W(0)+P(-1)': word_0 + '+' + postag_minus_1,
 
-        #'W(0)+O(0)':W0_O0,
+        'W(0)+O(0)':W0_O0,
     }
 
 
@@ -143,11 +146,13 @@ def fit(model):
         print 'load model completed !!!'
         return crf
     except: crf = None
+    c2_rs =  0.11387280044398507
+    c1_rs = 0.16809672538252116
     if crf == None:
         crf = sklearn_crfsuite.CRF(
             algorithm='lbfgs',
-            c1=0.1,
-            c2=0.1,
+            c1=c1_rs,
+            c2=c2_rs,
             max_iterations=100,
             all_possible_transitions=True,
         )
@@ -160,6 +165,8 @@ def fit(model):
         #estimate model...
 def optimize(model):
     crf = joblib.load(model)
+    rs_x_train = X_train[:len(X_train) / 10]
+    rs_y_train = y_train[:len(y_train) / 10]
 
     labels = list(crf.classes_)
     params_space = {
@@ -178,7 +185,7 @@ def optimize(model):
                             n_jobs=-1,
                             n_iter=50,
                             scoring=f1_scorer)
-    rs.fit(X_train, y_train)
+    rs.fit(rs_x_train, rs_y_train)
     print('best params:', rs.best_params_)
     print('best CV score:', rs.best_score_)
 
@@ -210,8 +217,8 @@ def estimate(model):
 #test a sentences
 def test_ner(crf, test_sent):
     arr_featurized_sent = []
-    # postaged_sent = ViPosTagger.postagging(ViTokenizer.tokenize(test_sent))
-    postaged_sent = ViPosTagger.postagging(test_sent)
+    postaged_sent = ViPosTagger.postagging(ViTokenizer.tokenize(test_sent))
+    #postaged_sent = ViPosTagger.postagging(test_sent)
 
     print postaged_sent
     test_arr = []
@@ -225,12 +232,46 @@ def test_ner(crf, test_sent):
 
 
 def predict(crf, query):
-    #query = u"Cơ quan điều tra Công an quận Nam Từ Liêm (Hà Nội) xác định, Nguyễn Thị Thuận, Bí thư Đảng uỷ phường Mỹ Đình 1 cùng chồng là Nguyễn Văn Tiện tổ chức đánh bạc dưới hình thức ghi lô đề với số tiền lên đến hơn 4,7 tỉ đồng và thu lợi bất chính gần 600 triệu đồng"
+
     query = unicode(query, encoding='utf-8')
     kqcc = test_ner(crf, query)
-    s = [x[0][0] + u' -- ' + unicode(x[1], 'utf-8') for x in kqcc]
-    return u''.join(s)
-fit('crf05.pkl')
-optimize('crf05.pkl')
+    #s = [x[0][0] + u' -- ' + unicode(x[1], 'utf-8') for x in kqcc]
+    s = ""
+    for i in xrange(len(kqcc)):
+        try:
+            x = kqcc[i+1]
+        except IndexError:
+            x = 'null'
 
-estimate('crf05.pkl')
+        if kqcc[i][1] == 'B-PER\n':
+            s = s + '  <PER>' + kqcc[i][0][0] + '</PER>  '
+        elif kqcc[i][1] == 'B-LOC\n':
+            if  x[1] == 'I-LOC\n':
+                s = s + '  <LOC>' + kqcc[i][0][0]
+            else:
+                s = s + '  <LOC>'+kqcc[i][0][0]+'</LOC>  '
+        elif kqcc[i][1] == 'I-LOC\n':
+            if x[1] == 'I-LOC\n':
+                s = s +" "+ kqcc[i][0][0]
+            else:
+                s = s + " " + kqcc[i][0][0] + '</LOC>  '
+        elif kqcc[i][1] == 'B-ORG\n':
+            if x[1] == 'I-ORG\n':
+                s = s + '  <ORG>' + kqcc[i][0][0]
+            else:
+                s = s + '  <ORG>'+kqcc[i][0][0]+'</ORG>  '
+        elif kqcc[i][1] == 'I-ORG\n':
+            if x[1] == 'I-ORG\n':
+                s = s + " " + kqcc[i][0][0]
+            else:
+                s = s + " " + kqcc[i][0][0] + '</ORG>  '
+        else:
+            s = s + " " +kqcc[i][0][0]
+    return s
+
+
+fit('crf_09.pkl')
+#optimize('crf05.pkl')
+estimate('crf_09.pkl')
+
+
