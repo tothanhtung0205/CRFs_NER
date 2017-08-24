@@ -17,9 +17,9 @@ def homepage():
 @app.route('/crf', methods=['POST'])
 def process_request():
     data = request.get_data()
-    crf = ner_vn.fit('crf_92.pkl')
+    crf = ner_vn.fit('crf_.pkl')
     return ner_vn.predict(crf, data)
 
 
 if __name__ == '__main__':
-    app.run(port=10000)
+    app.run(port=12345)

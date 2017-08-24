@@ -7,7 +7,8 @@ import scipy.stats
 from pyvi.pyvi import ViPosTagger,ViTokenizer
 from sklearn.externals import joblib
 from sklearn.model_selection import RandomizedSearchCV
-from collections import Counter
+from regex import get_regex
+import random
 
 #Featurelize sentences
 def contains_digit(str):
@@ -54,51 +55,60 @@ def single_features(sent, i):
 
     word_minus_1 = sent[i-1][0].lower() if i>0 else "BOS"
     postag_minus_1 = sent[i-1][1] if i>0 else "BOS"
+    R_minus_1 = get_regex(sent[i-1][0].lower()) if i>0 else "BOS"
 
     word_minus_2 = sent[i-2][0].lower() if i>1 else "BOS"
     postag_minus_2 = sent[i-2][1] if i>1 else "BOS"
 
     word_add_1 = sent[i+1][0].lower() if i<len(sent)-1 else "EOS"
     postag_add_1 = sent[i+1][1] if i < len(sent)-1 else "EOS"
+    R_add_1 = get_regex(sent[i+1][0].lower()) if i < len(sent)-1 else "EOS"
 
     word_add_2 = sent[i + 2][0].lower() if i < len(sent)-2  else "EOS"
     postag_add_2 = sent[i + 2][1] if i < len(sent)-2 else "EOS"
 
     O_0 = get_shape(raw_word_0)
-
+    R_0 = get_regex(word_0)
     features = {
+        # co the them chunk va regular express
         'bias': 1.0,
         'W(0)': word_0,  # W_0,
         'P(0)': postag_0,  # P_0
         'O(0)': O_0,
+        'R(0)':R_0,
 
         'W(-1)':word_minus_1,
         'P(-1)':postag_minus_1,
+        'R(-1)':R_minus_1,
 
-        'W(-2)':word_minus_2,
-        'P(-2)':postag_minus_2,
+         'W(-2)':word_minus_2,
+         'P(-2)':postag_minus_2,
 
         'W(+1)':word_add_1,
         'P(+1)':postag_add_1,
+        'R(1)':R_add_1,
 
         'W(+2)':word_add_2,
         'P(+2)':postag_add_2,
+        # neu them cai nay thi tang f1 score
+
+        'R(-1)+R(0)':R_minus_1+'+'+R_0,
+        'R(0)+R(1)':R_0+'+'+R_add_1,
 
         'W(-1)+W(0)':word_minus_1+"+"+word_0,
         'W(0)+W(1)' :word_0+"+"+word_add_1,
-        'W(-2)+W(-1)':word_minus_2+"+"+word_minus_1,
-        'W(1)+W(2)':word_add_1+"+"+word_add_2,
+        #'W(-2)+W(-1)':word_minus_2+"+"+word_minus_1,
+        #'W(1)+W(2)':word_add_1+"+"+word_add_2,
 
 
         'P(-1)+P(0)':postag_minus_1+'+'+postag_0,
         'P(0)+P(1)':postag_0+'+' +postag_add_1,
-        'P(-2)+P(-1)':postag_minus_2+'+'+postag_minus_1,
-        'P(1)+P(2)':postag_add_1+'+'+postag_add_2,
+        #'P(-2)+P(-1)':postag_minus_2+'+'+postag_minus_1,
+        #'P(1)+P(2)':postag_add_1+'+'+postag_add_2,
+
+        #'P(-1)+P(1)':postag_minus_1 + '+' + postag_add_1,
 
 
-        # 'W(-1)+W(0)+W(1)':word_minus_1+'+'+word_0+'+'+word_add_1,
-        # 'W(-2)+W(-1)+W(0)':word_minus_2+'+'+word_minus_1+'+'+word_0,
-        # 'W(0)+W(1)+W(2)':word_0+"+"+word_add_1+'+'+word_add_2,
 
         'W(0)+P(0)':word_0+'+'+postag_0,
         'W(0)+P(1)':word_0+'+'+postag_add_1,
@@ -173,8 +183,11 @@ def fit(model):
         #estimate model...
 def optimize(model):
     crf = joblib.load(model)
-    rs_x_train = X_train[:len(X_train) / 10]
-    rs_y_train = y_train[:len(y_train) / 10]
+    #rs_x_train = X_train[:len(X_train) / 10]
+    #rs_y_train = y_train[:len(y_train) / 10]
+
+    rs_x_train = random.sample(X_train,len(X_train/10))
+    rs_y_train = random.sample(y_train, len(y_train / 10))
 
     labels = list(crf.classes_)
     params_space = {
@@ -278,9 +291,9 @@ def predict(crf, query):
             s = s + " " +kqcc[i][0][0]
     return s
 
-
-fit('crf_092.pkl')
-#optimize('crf05.pkl')
-estimate('crf_092.pkl')
+#crf add r0,r1,r-1
+fit('crf_.pkl')
+#optimize('crf.pkl')
+estimate('crf_.pkl')
 
 
