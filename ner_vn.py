@@ -9,6 +9,12 @@ from sklearn.externals import joblib
 from sklearn.model_selection import RandomizedSearchCV
 from regex import get_regex
 import random
+import numpy as np
+from w2v import features_extraction
+
+
+w2v_model = features_extraction()
+w2v_model.run('dataset/nomed_ner_vietnamese.txt')
 
 #Featurelize sentences
 def contains_digit(str):
@@ -69,6 +75,9 @@ def single_features(sent, i):
 
     O_0 = get_shape(raw_word_0)
     R_0 = get_regex(word_0)
+
+
+    w2v = w2v_model.get_word_vector(word_0)
     features = {
         # co the them chunk va regular express
         'bias': 1.0,
@@ -76,39 +85,33 @@ def single_features(sent, i):
         'P(0)': postag_0,  # P_0
         'O(0)': O_0,
         'R(0)':R_0,
-
+        'L1(0)':word_0.count('_'),           #bao nhieu tieng trong tu
+        'L2(0)':len(word_0),                 #do dai tu
+        #'w2v':w2v,
         'W(-1)':word_minus_1,
         'P(-1)':postag_minus_1,
         'R(-1)':R_minus_1,
 
-         'W(-2)':word_minus_2,
-         'P(-2)':postag_minus_2,
+        'W(-2)':word_minus_2,
+        'P(-2)':postag_minus_2,
 
         'W(+1)':word_add_1,
         'P(+1)':postag_add_1,
-        'R(1)':R_add_1,
+        'R(+1)':R_add_1,
 
         'W(+2)':word_add_2,
         'P(+2)':postag_add_2,
-        # neu them cai nay thi tang f1 score
+
 
         'R(-1)+R(0)':R_minus_1+'+'+R_0,
         'R(0)+R(1)':R_0+'+'+R_add_1,
 
         'W(-1)+W(0)':word_minus_1+"+"+word_0,
         'W(0)+W(1)' :word_0+"+"+word_add_1,
-        #'W(-2)+W(-1)':word_minus_2+"+"+word_minus_1,
-        #'W(1)+W(2)':word_add_1+"+"+word_add_2,
 
 
         'P(-1)+P(0)':postag_minus_1+'+'+postag_0,
         'P(0)+P(1)':postag_0+'+' +postag_add_1,
-        #'P(-2)+P(-1)':postag_minus_2+'+'+postag_minus_1,
-        #'P(1)+P(2)':postag_add_1+'+'+postag_add_2,
-
-        #'P(-1)+P(1)':postag_minus_1 + '+' + postag_add_1,
-
-
 
         'W(0)+P(0)':word_0+'+'+postag_0,
         'W(0)+P(1)':word_0+'+'+postag_add_1,
@@ -151,8 +154,8 @@ def read_file(file_name):
 
 
 # Reading file....
-train_sents = read_file('dataset/train_nor.txt')
-
+train_sents = read_file('dataset/train.txt')
+print "featuring sentence..."
 X_train = [sent2features(s) for s in train_sents]
 y_train = [sent2labels(s) for s in train_sents]
 
@@ -213,15 +216,17 @@ def optimize(model):
 
 def estimate(model):
     crf = joblib.load(model)
-    test_sents = read_file('dataset/test_nor.txt')
+    test_sents = read_file('dataset/test.txt')
 
     X_test = [sent2features(s) for s in test_sents]
     y_test = [sent2labels(s) for s in test_sents]
 
     labels = list(crf.classes_)
-    labels.remove('O\n')
+    print labels
+    for lb in ['O\n','I-PRO\n','B-TOUR\n','I-TOUR\n']:
+        labels.remove(lb)
+
     y_pred = crf.predict(X_test)
-    print y_pred
     kq = metrics.flat_f1_score(y_test, y_pred,
                           average='weighted', labels=labels)
     print kq
@@ -292,8 +297,10 @@ def predict(crf, query):
     return s
 
 #crf add r0,r1,r-1
-fit('crf_.pkl')
+print "fitting model....."
+fit('crf_2.pkl')
 #optimize('crf.pkl')
-estimate('crf_.pkl')
+print "estimating....."
+estimate('crf_2.pkl')
 
 

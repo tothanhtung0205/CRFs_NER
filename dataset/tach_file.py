@@ -1,7 +1,7 @@
 from io import open
 
 arr = []
-with open('nomed_ner_vietnamese.txt','r',encoding='utf-8') as f:
+with open('data_nor.txt','r',encoding='utf-8') as f:
     for line in f:
        arr.append(line)
 
