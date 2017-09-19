@@ -2,13 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c5dac04-68e4-4c08-bdd6-233c9c7629f5" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Procfile" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/crf_regex.pkl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dataset/data_nor.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dataset/test.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dataset/train.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dataset/train_test.tar.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dataset/train_test/test.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dataset/train_test/train.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataset/tach_file.py" afterPath="$PROJECT_DIR$/dataset/tach_file.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataset/test.txt" afterPath="$PROJECT_DIR$/dataset/test.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataset/train.txt" afterPath="$PROJECT_DIR$/dataset/train.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataset/train_nor.txt" afterPath="$PROJECT_DIR$/dataset/train_nor.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ner_vn.py" afterPath="$PROJECT_DIR$/ner_vn.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/regex.py" afterPath="$PROJECT_DIR$/regex.py" />
     </list>
@@ -24,13 +25,56 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ner_vn.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ner_vn.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ner_vn.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2755">
-              <caret line="223" column="31" lean-forward="true" selection-start-line="223" selection-start-column="31" selection-end-line="223" selection-end-column="31" />
+            <state relative-caret-position="192">
+              <caret line="121" column="0" lean-forward="true" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
               <folding>
                 <element signature="e#23#42#0" expanded="true" />
+                <element signature="e#1154#1176#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="raw_test.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dataset/data_vc2/raw_test.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1935645">
+              <caret line="129043" column="10" lean-forward="false" selection-start-line="129043" selection-start-column="5" selection-end-line="129043" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="train.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dataset/data_vc2/train.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4318185">
+              <caret line="287879" column="7" lean-forward="false" selection-start-line="287879" selection-start-column="0" selection-end-line="287879" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dataset/data_vc2/test.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="10281" column="22" lean-forward="false" selection-start-line="10281" selection-start-column="17" selection-end-line="10281" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="server.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="19" lean-forward="true" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+              <folding>
+                <element signature="e#23#55#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -39,30 +83,8 @@
       <file leaf-file-name="tach_file.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dataset/tach_file.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="22" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="w2v.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/w2v.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1275">
-              <caret line="85" column="48" lean-forward="false" selection-start-line="85" selection-start-column="48" selection-end-line="85" selection-end-column="48" />
-              <folding>
-                <element signature="e#48#82#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="data_nor.txt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dataset/data_nor.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="91">
-              <caret line="733173" column="13" lean-forward="false" selection-start-line="733173" selection-start-column="8" selection-end-line="733173" selection-end-column="13" />
+            <state relative-caret-position="180">
+              <caret line="12" column="25" lean-forward="false" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -79,16 +101,10 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>cục</find>
-      <find>nội_vụ</find>
-      <find>cổ_phần</find>
-      <find>trưởng</find>
-      <find>bộ_trưởng</find>
       <find>đội_tuyển</find>
       <find>thị_trấn</find>
       <find>trường</find>
       <find>I-LOC</find>
-      <find>I-PER</find>
       <find>trực_tiếp</find>
       <find>Mai_ái</find>
       <find>mai_ái</find>
@@ -98,7 +114,6 @@
       <find>liên_xô</find>
       <find>thủ_tướng</find>
       <find>thủ_t</find>
-      <find>-</find>
       <find>H-</find>
       <find>triều_tiên</find>
       <find>dân_trí</find>
@@ -109,6 +124,13 @@
       <find>bà_rịa</find>
       <find>viện_kiểm</find>
       <find>i-per</find>
+      <find>cầu</find>
+      <find>-</find>
+      <find>B-PER</find>
+      <find>ba_phước</find>
+      <find>thị_thảo</find>
+      <find>I-PER</find>
+      <find>Arsenal</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -126,13 +148,13 @@
         <option value="$PROJECT_DIR$/dataset/tinh_thanh.txt" />
         <option value="$PROJECT_DIR$/crf.html" />
         <option value="$PROJECT_DIR$/test/test_pos.py" />
-        <option value="$PROJECT_DIR$/server.py" />
         <option value="$PROJECT_DIR$/xxx.py" />
         <option value="$PROJECT_DIR$/dataset/ho_nguoi_viet.txt" />
         <option value="$PROJECT_DIR$/dataset/train_nor.txt" />
-        <option value="$PROJECT_DIR$/regex.py" />
         <option value="$PROJECT_DIR$/word2vec.py" />
         <option value="$PROJECT_DIR$/w2v.py" />
+        <option value="$PROJECT_DIR$/regex.py" />
+        <option value="$PROJECT_DIR$/server.py" />
         <option value="$PROJECT_DIR$/dataset/tach_file.py" />
         <option value="$PROJECT_DIR$/ner_vn.py" />
       </list>
@@ -163,7 +185,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -176,10 +197,17 @@
               <item name="CRFs_NER" type="462c0819:PsiDirectoryNode" />
               <item name="dataset" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="CRFs_NER" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CRFs_NER" type="462c0819:PsiDirectoryNode" />
+              <item name="dataset" type="462c0819:PsiDirectoryNode" />
+              <item name="data_vc2" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -355,7 +383,7 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="regex" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="server" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -367,7 +395,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="CRFs" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/regex.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/server.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -425,18 +453,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.ner_vn" />
-      <item index="1" class="java.lang.String" itemvalue="Python.regex" />
-      <item index="2" class="java.lang.String" itemvalue="Python.word2vec" />
-      <item index="3" class="java.lang.String" itemvalue="Python.w2v" />
-      <item index="4" class="java.lang.String" itemvalue="Python.tach_file" />
+      <item index="1" class="java.lang.String" itemvalue="Python.word2vec" />
+      <item index="2" class="java.lang.String" itemvalue="Python.w2v" />
+      <item index="3" class="java.lang.String" itemvalue="Python.tach_file" />
+      <item index="4" class="java.lang.String" itemvalue="Python.server" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python.ner_vn" />
-        <item index="1" class="java.lang.String" itemvalue="Python.tach_file" />
-        <item index="2" class="java.lang.String" itemvalue="Python.w2v" />
-        <item index="3" class="java.lang.String" itemvalue="Python.word2vec" />
-        <item index="4" class="java.lang.String" itemvalue="Python.regex" />
+        <item index="1" class="java.lang.String" itemvalue="Python.server" />
+        <item index="2" class="java.lang.String" itemvalue="Python.tach_file" />
+        <item index="3" class="java.lang.String" itemvalue="Python.w2v" />
+        <item index="4" class="java.lang.String" itemvalue="Python.word2vec" />
       </list>
     </recent_temporary>
   </component>
@@ -466,23 +494,23 @@
     <frame x="65" y="40" width="1303" height="780" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29083666" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3003984" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32817337" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43234837" sideWeight="0.50278884" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.49561754" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.43856922" sideWeight="0.49690402" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4836703" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.49455675" sideWeight="0.49690402" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30637637" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5381026" sideWeight="0.49721116" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.43234837" sideWeight="0.49721116" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988048" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.49561754" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -520,87 +548,12 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="77" />
+      <option name="time" value="79" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="29" lean-forward="false" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ner_vn.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#23#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dataset/train.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291045">
-          <caret line="19403" column="14" lean-forward="false" selection-start-line="19403" selection-start-column="8" selection-end-line="19403" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dataset/train_nor.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289305">
-          <caret line="19287" column="15" lean-forward="false" selection-start-line="19287" selection-start-column="9" selection-end-line="19287" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dataset/test.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1920450">
-          <caret line="128030" column="0" lean-forward="false" selection-start-line="128030" selection-start-column="0" selection-end-line="128030" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="11" column="29" lean-forward="false" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ner_vn.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#23#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dataset/train.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291045">
-          <caret line="19403" column="14" lean-forward="false" selection-start-line="19403" selection-start-column="8" selection-end-line="19403" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dataset/train_nor.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289305">
-          <caret line="19287" column="15" lean-forward="false" selection-start-line="19287" selection-start-column="9" selection-end-line="19287" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dataset/test.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1920450">
-          <caret line="128030" column="0" lean-forward="false" selection-start-line="128030" selection-start-column="0" selection-end-line="128030" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/dataset/test.txt" />
     <entry file="file://$PROJECT_DIR$/server.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -614,17 +567,12 @@
           <caret line="189" column="37" lean-forward="false" selection-start-line="189" selection-start-column="37" selection-end-line="189" selection-end-column="37" />
           <folding>
             <element signature="e#23#42#0" expanded="true" />
+            <element signature="e#1154#1176#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dataset/train.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291045">
-          <caret line="19403" column="14" lean-forward="false" selection-start-line="19403" selection-start-column="8" selection-end-line="19403" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/dataset/train.txt" />
     <entry file="file://$PROJECT_DIR$/dataset/train_nor.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289305">
@@ -632,13 +580,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dataset/test.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1920450">
-          <caret line="128030" column="0" lean-forward="false" selection-start-line="128030" selection-start-column="0" selection-end-line="128030" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/dataset/test.txt" />
     <entry file="file://$PROJECT_DIR$/server.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -652,17 +594,12 @@
           <caret line="189" column="37" lean-forward="false" selection-start-line="189" selection-start-column="37" selection-end-line="189" selection-end-column="37" />
           <folding>
             <element signature="e#23#42#0" expanded="true" />
+            <element signature="e#1154#1176#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dataset/train.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291045">
-          <caret line="19403" column="14" lean-forward="false" selection-start-line="19403" selection-start-column="8" selection-end-line="19403" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/dataset/train.txt" />
     <entry file="file://$PROJECT_DIR$/dataset/train_nor.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289305">
@@ -670,13 +607,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dataset/test.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1920450">
-          <caret line="128030" column="0" lean-forward="false" selection-start-line="128030" selection-start-column="0" selection-end-line="128030" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/dataset/test.txt" />
     <entry file="file://$PROJECT_DIR$/server.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -690,17 +621,12 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#23#42#0" expanded="true" />
+            <element signature="e#1154#1176#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dataset/train.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291045">
-          <caret line="19403" column="14" lean-forward="false" selection-start-line="19403" selection-start-column="8" selection-end-line="19403" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/dataset/train.txt" />
     <entry file="file://$PROJECT_DIR$/dataset/train_nor.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289305">
@@ -708,13 +634,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dataset/test.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1920450">
-          <caret line="128030" column="0" lean-forward="false" selection-start-line="128030" selection-start-column="0" selection-end-line="128030" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/dataset/test.txt" />
     <entry file="file://$PROJECT_DIR$/server.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -760,13 +680,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="24" column="23" lean-forward="false" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/xxx.py" />
     <entry file="file://$PROJECT_DIR$/dataset/dataset_vlsp/NER2016-TrainingData-Normalized/data_nor_tokenizer.txt">
       <provider selected="true" editor-type-id="text-editor">
@@ -782,27 +695,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/regex.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dataset/train_nor.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2086440">
-          <caret line="139096" column="12" lean-forward="false" selection-start-line="139096" selection-start-column="12" selection-end-line="139096" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dataset/ho_nguoi_viet.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="2" lean-forward="false" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -820,71 +716,139 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dataset/test.txt" />
+    <entry file="file://$PROJECT_DIR$/dataset/train.txt" />
+    <entry file="file://$PROJECT_DIR$/dataset/nomed_ner_vietnamese.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="254268" column="6" lean-forward="false" selection-start-line="254268" selection-start-column="0" selection-end-line="254268" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataset/data_nor.txt" />
+    <entry file="file://$PROJECT_DIR$/dataset/data_vc2/raw_data.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/w2v.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1275">
           <caret line="85" column="48" lean-forward="false" selection-start-line="85" selection-start-column="48" selection-end-line="85" selection-end-column="48" />
-          <folding>
-            <element signature="e#48#82#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dataset/test.txt">
+    <entry file="file://$USER_HOME$/.local/lib/python2.7/site-packages/sklearn_crfsuite/metrics.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1920450">
-          <caret line="128030" column="0" lean-forward="false" selection-start-line="128030" selection-start-column="0" selection-end-line="128030" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dataset/train.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291045">
-          <caret line="19403" column="8" lean-forward="false" selection-start-line="19403" selection-start-column="8" selection-end-line="19403" selection-end-column="8" />
-          <folding />
+        <state relative-caret-position="196">
+          <caret line="44" column="4" lean-forward="false" selection-start-line="44" selection-start-column="4" selection-end-line="44" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dataset/test_nor.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
+        <state relative-caret-position="-1319071">
           <caret line="9707" column="1" lean-forward="false" selection-start-line="9707" selection-start-column="0" selection-end-line="9707" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataset/train_nor.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="47776" column="5" lean-forward="false" selection-start-line="47776" selection-start-column="5" selection-end-line="47776" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataset/data_vc2/raw_train.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="583">
+          <caret line="38516" column="17" lean-forward="false" selection-start-line="38516" selection-start-column="16" selection-end-line="38516" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataset/data_vc2/raw_test.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1935645">
+          <caret line="129043" column="10" lean-forward="false" selection-start-line="129043" selection-start-column="5" selection-end-line="129043" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dataset/nomed_ner_vietnamese.txt">
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/pyvi/pyvi.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="254268" column="6" lean-forward="false" selection-start-line="254268" selection-start-column="0" selection-end-line="254268" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="-675">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dataset/tach_file.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="22" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+        <state relative-caret-position="180">
+          <caret line="12" column="25" lean-forward="false" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/regex.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="22" column="26" lean-forward="false" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataset/data_vc2/train.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4318185">
+          <caret line="287879" column="7" lean-forward="false" selection-start-line="287879" selection-start-column="0" selection-end-line="287879" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataset/data_vc2/test.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="10281" column="22" lean-forward="false" selection-start-line="10281" selection-start-column="17" selection-end-line="10281" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="19" lean-forward="true" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+          <folding>
+            <element signature="e#23#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/collections.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4542">
+          <caret line="406" column="6" lean-forward="false" selection-start-line="406" selection-start-column="6" selection-end-line="406" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.local/lib/python2.7/site-packages/sklearn_crfsuite/estimator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-492">
+          <caret line="474" column="8" lean-forward="false" selection-start-line="474" selection-start-column="8" selection-end-line="474" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ner_vn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2755">
-          <caret line="223" column="31" lean-forward="true" selection-start-line="223" selection-start-column="31" selection-end-line="223" selection-end-column="31" />
+        <state relative-caret-position="192">
+          <caret line="121" column="0" lean-forward="true" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
           <folding>
             <element signature="e#23#42#0" expanded="true" />
+            <element signature="e#1154#1176#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dataset/data_nor.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="733173" column="13" lean-forward="false" selection-start-line="733173" selection-start-column="8" selection-end-line="733173" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
