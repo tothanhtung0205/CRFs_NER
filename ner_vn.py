@@ -12,10 +12,6 @@ import random
 from w2v import features_extraction
 from collections import Counter
 
-
-w2v_model = features_extraction()
-w2v_model.run('dataset/nomed_ner_vietnamese.txt')
-
 #Featurelize sentences
 class Shape:
 
@@ -87,7 +83,6 @@ def single_features(sent, i):
     R_0 = get_regex(word_0)
 
 
-    w2v = w2v_model.get_word_vector(word_0)
     features = {
         # co the them chunk va regular express
         'bias': 1.0,
@@ -100,9 +95,7 @@ def single_features(sent, i):
         'is_digit':raw_word_0.isdigit(),
         'contain_digit':Shape.contains_digit(raw_word_0),
         'is_upper':raw_word_0.isupper(),
-        'W(0)+is_upper':raw_word_0+'+'+str(raw_word_0.isupper()),
-        'P(0)+is_upper'
-        
+        #'W(0)+is_upper':raw_word_0+'+'+str(raw_word_0.isupper()),
         'is_title':raw_word_0.istitle(),
         'is_lower':raw_word_0.islower(),
         'is_title_with_period':Shape.itwp(raw_word_0),
@@ -179,10 +172,7 @@ def read_file(file_name):
 
 
 # Reading file....
-train_sents = read_file('dataset/data_vc2/train.txt')
-print "featuring sentence..."
-X_train = [sent2features(s) for s in train_sents]
-y_train = [sent2labels(s) for s in train_sents]
+
 
 
 def fit(model):
@@ -192,6 +182,13 @@ def fit(model):
         print 'load model completed !!!'
         return crf
     except: crf = None
+
+    train_sents = read_file('dataset/data_vc2/train_nor_tokenizer.txt')
+    print "featuring sentence..."
+    X_train = [sent2features(s) for s in train_sents]
+    y_train = [sent2labels(s) for s in train_sents]
+
+
     c2_rs =  0.1
     c1_rs = 0.1
     if crf == None:
@@ -211,8 +208,10 @@ def fit(model):
         #estimate model...
 def optimize(model):
     crf = joblib.load(model)
-    #rs_x_train = X_train[:len(X_train) / 10]
-    #rs_y_train = y_train[:len(y_train) / 10]
+    train_sents = read_file('dataset/data_vc2/train_nor_tokenizer.txt')
+    print "featuring sentence..."
+    X_train = [sent2features(s) for s in train_sents]
+    y_train = [sent2labels(s) for s in train_sents]
 
     rs_x_train = random.sample(X_train,len(X_train/10))
     rs_y_train = random.sample(y_train, len(y_train / 10))
@@ -252,7 +251,7 @@ def estimate(model):
     #print "train_score : %f" %scr
 
 
-    test_sents = read_file('dataset/data_vc2/test.txt')
+    test_sents = read_file('dataset/data_vc2/test_nor_tokenizer.txt')
 
     X_test = [sent2features(s) for s in test_sents]
     y_test = [sent2labels(s) for s in test_sents]
@@ -282,15 +281,11 @@ def estimate(model):
 
 
 
-
-
-
 #test a sentences
 def test_ner(crf, test_sent):
+    from tokenizer import get_tokenizer
     arr_featurized_sent = []
-    postaged_sent = ViPosTagger.postagging(ViTokenizer.tokenize(test_sent))
-    #postaged_sent = ViPosTagger.postagging(test_sent)
-
+    postaged_sent = ViPosTagger.postagging(get_tokenizer(test_sent))
     print postaged_sent
     test_arr = []
     for i in xrange(len(postaged_sent[0])):
@@ -306,8 +301,8 @@ def predict(crf, query):
 
     query = unicode(query, encoding='utf-8')
     kqcc = test_ner(crf, query)
-    x = [x[0][0] + u' -- ' + unicode(x[1], 'utf-8') for x in kqcc]
-    s2 =   u'\n'.join(x)
+    # x = [x[0][0] + u' -- ' + unicode(x[1], 'utf-8') for x in kqcc]
+    # s2 =   u'\n'.join(x)
     s = ""
     for i in xrange(len(kqcc)):
         try:
@@ -339,14 +334,15 @@ def predict(crf, query):
                 s = s + " " + kqcc[i][0][0] + '</ORG>  '
         else:
             s = s + " " +kqcc[i][0][0]
-    return s + '\n' + s2
+    #return s + '\n' + s2
+    return s
 
 
 #crf add r0,r1,r-1
 print "fitting model....."
 crf = fit('crf_.pkl')
-# print("Top positive:")
-# state = crf.state_features_
+print("Top positive:")
+state = crf.state_features_
 # couter = Counter(state)
 # most_cmn = couter.most_common(30)
 # print_state_features(most_cmn)
