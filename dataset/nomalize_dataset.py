@@ -3,7 +3,7 @@ from pyvi.pyvi import ViPosTagger,ViTokenizer
 from io import open
 
 dataset_arr = []
-with open('ner_vietnamese.txt', 'r', encoding='utf-8') as f:
+with open('raw_data_vc_small.txt', 'r', encoding='utf-8') as f:
     for line in f:
         if line == '\n':
             word_pos_label = ['\n','\n','\n']

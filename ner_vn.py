@@ -1,20 +1,15 @@
 # -*- coding=utf-8 -*-
-from io import open
-import sklearn_crfsuite
-from sklearn_crfsuite import metrics
-from sklearn.metrics import make_scorer
-import scipy.stats
-from pyvi.pyvi import ViPosTagger,ViTokenizer
-from sklearn.externals import joblib
-from sklearn.model_selection import RandomizedSearchCV
-from regex import get_regex
 import random
-import numpy as np
-from w2v import features_extraction
+from io import open
 
-
-w2v_model = features_extraction()
-w2v_model.run('dataset/nomed_ner_vietnamese.txt')
+import scipy.stats
+import sklearn_crfsuite
+from pyvi.pyvi import ViPosTagger, ViTokenizer
+from sklearn.externals import joblib
+from sklearn.metrics import make_scorer
+from sklearn.model_selection import RandomizedSearchCV
+from sklearn_crfsuite import metrics
+import dict2 as dict
 
 #Featurelize sentences
 def contains_digit(str):
@@ -61,50 +56,54 @@ def single_features(sent, i):
 
     word_minus_1 = sent[i-1][0].lower() if i>0 else "BOS"
     postag_minus_1 = sent[i-1][1] if i>0 else "BOS"
-    R_minus_1 = get_regex(sent[i-1][0].lower()) if i>0 else "BOS"
 
     word_minus_2 = sent[i-2][0].lower() if i>1 else "BOS"
     postag_minus_2 = sent[i-2][1] if i>1 else "BOS"
 
     word_add_1 = sent[i+1][0].lower() if i<len(sent)-1 else "EOS"
     postag_add_1 = sent[i+1][1] if i < len(sent)-1 else "EOS"
-    R_add_1 = get_regex(sent[i+1][0].lower()) if i < len(sent)-1 else "EOS"
+
 
     word_add_2 = sent[i + 2][0].lower() if i < len(sent)-2  else "EOS"
     postag_add_2 = sent[i + 2][1] if i < len(sent)-2 else "EOS"
 
     O_0 = get_shape(raw_word_0)
-    R_0 = get_regex(word_0)
 
 
-    w2v = w2v_model.get_word_vector(word_0)
     features = {
         # co the them chunk va regular express
         'bias': 1.0,
         'W(0)': word_0,  # W_0,
         'P(0)': postag_0,  # P_0
         'O(0)': O_0,
-        'R(0)':R_0,
+
+        'maybe_per':dict.maybe_is_per(word_0),
+        'maybe_org':dict.maybe_is_org(word_0),
+        'maybe_loc':dict.maybe_is_loc(word_0),
+        'maybe_prev_per':dict.maybe_prev_per(word_0),
+        'maybe_prev_org':dict.maybe_prev_org(word_0),
+        'maybe_prev_loc':dict.maybe_is_loc(word_0),
+
+        'prev_per+per':dict.maybe_prev_per(word_minus_1) and dict.maybe_is_per(word_0),
+        'prev_loc+loc': dict.maybe_prev_loc(word_minus_1) and dict.maybe_is_loc(word_0),
+        'prev_org+org': dict.maybe_prev_org(word_minus_1) and dict.maybe_is_org(word_0),
+
         'L1(0)':word_0.count('_'),           #bao nhieu tieng trong tu
         'L2(0)':len(word_0),                 #do dai tu
         #'w2v':w2v,
         'W(-1)':word_minus_1,
         'P(-1)':postag_minus_1,
-        'R(-1)':R_minus_1,
 
         'W(-2)':word_minus_2,
         'P(-2)':postag_minus_2,
 
         'W(+1)':word_add_1,
         'P(+1)':postag_add_1,
-        'R(+1)':R_add_1,
 
         'W(+2)':word_add_2,
         'P(+2)':postag_add_2,
 
 
-        'R(-1)+R(0)':R_minus_1+'+'+R_0,
-        'R(0)+R(1)':R_0+'+'+R_add_1,
 
         'W(-1)+W(0)':word_minus_1+"+"+word_0,
         'W(0)+W(1)' :word_0+"+"+word_add_1,
@@ -122,7 +121,6 @@ def single_features(sent, i):
 
 
     return features
-
 
 def word2features(sent, i):
     features = {}
@@ -153,13 +151,6 @@ def read_file(file_name):
     return sents
 
 
-# Reading file....
-train_sents = read_file('dataset/train.txt')
-print "featuring sentence..."
-X_train = [sent2features(s) for s in train_sents]
-y_train = [sent2labels(s) for s in train_sents]
-
-
 def fit(model):
     #training phase
     try:
@@ -167,9 +158,17 @@ def fit(model):
         print 'load model completed !!!'
         return crf
     except: crf = None
-    c2_rs =  0.11387280044398507
-    c1_rs = 0.16809672538252116
+    print "read train_data..."
+    train_sents = read_file('dataset/train_nor.txt')
+    print "featuring sentence..."
+    X_train = [sent2features(s) for s in train_sents]
+    y_train = [sent2labels(s) for s in train_sents]
+
+
+    c2_rs =  0.1
+    c1_rs = 0.1
     if crf == None:
+        print ("Training CRFs model.....")
         crf = sklearn_crfsuite.CRF(
             algorithm='lbfgs',
             c1=c1_rs,
@@ -177,8 +176,6 @@ def fit(model):
             max_iterations=100,
             all_possible_transitions=True,
         )
-
-        # featulize test set
 
         crf.fit(X_train, y_train)
         joblib.dump(crf, model)
@@ -188,7 +185,10 @@ def optimize(model):
     crf = joblib.load(model)
     #rs_x_train = X_train[:len(X_train) / 10]
     #rs_y_train = y_train[:len(y_train) / 10]
-
+    train_sents = read_file('dataset/train_nor.txt')
+    print "featuring sentence..."
+    X_train = [sent2features(s) for s in train_sents]
+    y_train = [sent2labels(s) for s in train_sents]
     rs_x_train = random.sample(X_train,len(X_train/10))
     rs_y_train = random.sample(y_train, len(y_train / 10))
 
@@ -216,16 +216,11 @@ def optimize(model):
 
 def estimate(model):
     crf = joblib.load(model)
-    test_sents = read_file('dataset/test.txt')
+    test_sents = read_file('dataset/test_nor.txt')
 
     X_test = [sent2features(s) for s in test_sents]
     y_test = [sent2labels(s) for s in test_sents]
-
-    labels = list(crf.classes_)
-    print labels
-    for lb in ['O\n','I-PRO\n','B-TOUR\n','I-TOUR\n']:
-        labels.remove(lb)
-
+    labels = ['B-PER\n','I-PER\n','B-ORG\n','I-ORG\n',"B-LOC\n",'I-LOC\n']
     y_pred = crf.predict(X_test)
     kq = metrics.flat_f1_score(y_test, y_pred,
                           average='weighted', labels=labels)
@@ -242,10 +237,11 @@ def estimate(model):
 
 #test a sentences
 def test_ner(crf, test_sent):
+    from tokenizer.tokenizer import Tokenizer
+    token = Tokenizer()
+    token.run()
     arr_featurized_sent = []
-    postaged_sent = ViPosTagger.postagging(ViTokenizer.tokenize(test_sent))
-    #postaged_sent = ViPosTagger.postagging(test_sent)
-
+    postaged_sent = ViPosTagger.postagging(token.predict(test_sent))
     print postaged_sent
     test_arr = []
     for i in xrange(len(postaged_sent[0])):
@@ -296,11 +292,10 @@ def predict(crf, query):
             s = s + " " +kqcc[i][0][0]
     return s
 
-#crf add r0,r1,r-1
+
 print "fitting model....."
-fit('crf_2.pkl')
-#optimize('crf.pkl')
+fit('crf_.pkl')
 print "estimating....."
-estimate('crf_2.pkl')
+estimate('crf_.pkl')
 
 
